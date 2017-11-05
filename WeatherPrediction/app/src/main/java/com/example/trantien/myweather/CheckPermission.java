@@ -21,7 +21,8 @@ public class CheckPermission {
                 Manifest.permission.ACCESS_WIFI_STATE,
                 Manifest.permission.INTERNET,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
-
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION,
         };
         List<String> listPermissionsNeeded = new ArrayList<>();
         for (String permission : permissions) {

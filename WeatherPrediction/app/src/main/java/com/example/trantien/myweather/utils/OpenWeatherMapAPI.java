@@ -1,5 +1,6 @@
 package com.example.trantien.myweather.utils;
 
+import com.example.trantien.myweather.Common;
 import com.example.trantien.myweather.model.OpenWeatherJSon;
 import com.google.gson.Gson;
 
@@ -17,21 +18,24 @@ public class OpenWeatherMapAPI {
 
     /**
      * api.openweathermap.org/data/2.5/weather?place=London
+     *
      * @param place
      * @return
      */
-    public static OpenWeatherJSon prediction(String place)
-    {
+    public static OpenWeatherJSon prediction(String place) {
         try {
-            String location= URLEncoder.encode(place, "UTF-8");
+            String location = URLEncoder.encode(place, "UTF-8");
 
-            URL url = new URL("http://api.openweathermap.org/data/2.5/weather?place="+location);
-            InputStreamReader reader = new InputStreamReader(url.openStream(),"UTF-8");
+            URL url = new URL("http://api.openweathermap.org/data/2.5/weather?place="
+                    + location
+                    + "&appid="
+                    + Common.KEY_WEATHER);
+            InputStreamReader reader = new InputStreamReader(url.openStream(), "UTF-8");
             OpenWeatherJSon results = new Gson().fromJson(reader, OpenWeatherJSon.class);
 
-      //      String idIcon = results.getWeather().get(0).getIcon().toString();
-        //    String urlIcon = "http://openweathermap.org/img/w/"+idIcon+".png";
-           // URL urlImage = new URL(urlIcon);
+            //      String idIcon = results.getWeather().get(0).getIcon().toString();
+            //    String urlIcon = "http://openweathermap.org/img/w/"+idIcon+".png";
+            // URL urlImage = new URL(urlIcon);
             return results;
 
         } catch (MalformedURLException e) {
@@ -45,22 +49,25 @@ public class OpenWeatherMapAPI {
     }
 
     /**
-     *
      * http://api.openweathermap.org/data/2.5/weather?lat=10.778182&lon=106.665504
+     *
      * @param lat
      * @param lon
      * @return
      */
-    public static OpenWeatherJSon prediction(double lat,double lon)
-    {
+    public static OpenWeatherJSon prediction(double lat, double lon) {
         try {
 
-            URL url = new URL("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon);
-            InputStreamReader reader = new InputStreamReader(url.openStream(),"UTF-8");
+            URL url = new URL("http://api.openweathermap.org/data/2.5/weather?lat="
+                    + lat + "&lon="
+                    + lon
+                    + "&appid="
+                    + Common.KEY_WEATHER);
+            InputStreamReader reader = new InputStreamReader(url.openStream(), "UTF-8");
             OpenWeatherJSon results = new Gson().fromJson(reader, OpenWeatherJSon.class);
 
             String idIcon = results.getWeather().get(0).getIcon().toString();
-            String urlIcon = "http://openweathermap.org/img/w/"+idIcon+".png";
+            String urlIcon = "http://openweathermap.org/img/w/" + idIcon + ".png";
             URL urlImage = new URL(urlIcon);
 
             return results;
@@ -78,21 +85,21 @@ public class OpenWeatherMapAPI {
     /**
      * Sửa lại WeatherJSON vì chưa phù hợp trong trường hợp Daily
      * http://api.openweathermap.org/data/2.5/forecast/daily?lat=10.778182&lon=106.66550&cnt=10
+     *
      * @param lat
      * @param lon
      * @param cnt
      * @return
      */
-    public static OpenWeatherJSon predictionDaily(double lat,double lon,int cnt)
-    {
+    public static OpenWeatherJSon predictionDaily(double lat, double lon, int cnt) {
         try {
 
-            URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?lat="+lat+"&lon="+lon+"&cnt="+cnt);
-            InputStreamReader reader = new InputStreamReader(url.openStream(),"UTF-8");
+            URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?lat=" + lat + "&lon=" + lon + "&cnt=" + cnt);
+            InputStreamReader reader = new InputStreamReader(url.openStream(), "UTF-8");
             OpenWeatherJSon results = new Gson().fromJson(reader, OpenWeatherJSon.class);
 
             String idIcon = results.getWeather().get(0).getIcon().toString();
-            String urlIcon = "http://openweathermap.org/img/w/"+idIcon+".png";
+            String urlIcon = "http://openweathermap.org/img/w/" + idIcon + ".png";
             URL urlImage = new URL(urlIcon);
 
             return results;

@@ -50,7 +50,7 @@ public class MyInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
     }
     @Override
     public View getInfoWindow(Marker marker) {
-        View v = this.context.getLayoutInflater().inflate(R.layout.activity_weather_current_location, null);
+        View v = this.context.getLayoutInflater().inflate(R.layout.view_detail_weather, null);
 
         TextView txtTemperature=(TextView) v.findViewById(R.id.txtTemperature);
         TextView txtCurrentAddressName=(TextView) v.findViewById(R.id.txtCurrentAddressName);

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyWeather</string>
+    <string name="google_maps_key">s</string>
 </resources>

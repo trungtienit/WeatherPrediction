@@ -33,9 +33,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WeatherCurrentLocationActivity"/>
-        <activity android:name=".WeatherMapsActivity"/>
-        <activity android:name=".ChooseAddressActivity"/>
+        <activity android:name=".weather.view.WeatherCurrentLocationActivity"/>
+        <activity android:name=".weather.WeatherMapsActivity"/>
+        <activity android:name=".weather.view.ChooseAddressActivity"/>
+        <activity android:name=".weather.view.WeatherActivity"/>
+        <activity android:name=".weather.view.WeatherByAddressActivity"/>
     </application>
     <uses-feature
         android:glEsVersion="0x00020000"

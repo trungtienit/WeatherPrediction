@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".weather.view.WeatherActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -49,13 +49,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Thời tiết địa điểm hiện tại của \nthiết bị "
+                android:text="Weather the current location\n of the device"
                 android:textAlignment="center" />
         </TableRow>
 
         <TableRow
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:background="@drawable/bg_item_click">
 
             <TextView
                 android:id="@+id/textView5"
@@ -69,7 +70,8 @@
         <TableRow
             android:id="@+id/weather_by_address"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:background="@drawable/bg_item_click">
 
             <ImageButton
                 android:id="@+id/imageButton2"
@@ -84,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:gravity="center"
-                android:text="Xem thời tiết theo \nđịa điểm nhập bất kỳ " />
+                android:text="Weather by location" />
 
         </TableRow>
 
@@ -104,7 +106,8 @@
         <TableRow
             android:id="@+id/daily_forecast"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:background="@drawable/bg_item_click">
 
             <ImageButton
                 android:id="@+id/imageButton3"
@@ -138,14 +141,14 @@
         <TableRow
             android:id="@+id/weather_by_map"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:background="@drawable/bg_item_click">
 
             <ImageButton
                 android:id="@+id/imageButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
-                android:onClick="showMapClick"
                 android:src="@drawable/weathermap" />
 
             <TextView
@@ -154,9 +157,19 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:ellipsize="middle"
-                android:text="Xem thời tiết trên Google Map " />
+                android:text="Weather on Google Map" />
         </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_span="2"
+                android:background="#004040"
+                android:text="" />
+        </TableRow>
 
     </TableLayout>
 

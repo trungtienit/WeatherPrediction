@@ -1,4 +1,4 @@
-package com.example.trantien.myweather.model;
+package com.example.trantien.myweather.weather.model;
 
 /**
  * Created by trantien on 11/4/17.

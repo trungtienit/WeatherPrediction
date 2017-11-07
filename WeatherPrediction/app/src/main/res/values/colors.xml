@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0afc1f</color>
-    <color name="colorPrimaryDark">#1cea34</color>
-    <color name="colorAccent">#39964a</color>
+    <color name="colorPrimary">@color/Cyan_500</color>
+    <color name="colorPrimaryDark">@color/Cyan_800</color>
+    <color name="colorAccent">@color/Cyan_500</color>
     <color name="white">#fff</color>
     <color name="transparent">#00dddddd</color>
     <color name="blue">#fb0b91cf</color>
+    //Design Cyan
+    <color name="Cyan_500">#00BCD4</color>
+    <color name="Cyan_50">#E0F7FA</color>
+    <color name="Cyan_100">#B2EBF2</color>
+    <color name="Cyan_200">#80DEEA</color>
+    <color name="Cyan_300">#4DD0E1</color>
+    <color name="Cyan_400">#26C6DA</color>
+    <color name="Cyan_600">#00ACC1</color>
+    <color name="Cyan_700">#0097A7</color>
+    <color name="Cyan_800">#00838F</color>
+    <color name="Cyan_900">#006064</color>
+    <color name="Cyan_A100">#84FFFF</color>
+    <color name="Cyan_A200">#18FFFF</color>
+    <color name="Cyan_A400">#00E5FF</color>
+    <color name="Cyan_A700">#00B8D4</color>
 
 </resources>

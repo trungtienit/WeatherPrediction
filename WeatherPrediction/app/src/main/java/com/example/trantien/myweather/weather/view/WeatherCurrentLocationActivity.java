@@ -1,4 +1,4 @@
-package com.example.trantien.myweather;
+package com.example.trantien.myweather.weather.view;
 
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -10,7 +10,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.example.trantien.myweather.utils.WeatherAsyncTask;
+import com.example.trantien.myweather.R;
+import com.example.trantien.myweather.weather.utils.WeatherAsyncTask;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;

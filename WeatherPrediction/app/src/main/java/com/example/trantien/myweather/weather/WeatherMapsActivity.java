@@ -1,9 +1,11 @@
-package com.example.trantien.myweather;
+package com.example.trantien.myweather.weather;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+
+import com.example.trantien.myweather.R;
 
 /**
  * Created by trantien on 11/5/17.

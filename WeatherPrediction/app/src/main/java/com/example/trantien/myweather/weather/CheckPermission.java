@@ -1,4 +1,4 @@
-package com.example.trantien.myweather;
+package com.example.trantien.myweather.weather;
 
 import android.Manifest;
 import android.app.Activity;
@@ -17,7 +17,6 @@ public class CheckPermission {
 
     public static void checkAndRequestPermissions(Activity activity) {
         String[] permissions = new String[]{
-
                 Manifest.permission.ACCESS_WIFI_STATE,
                 Manifest.permission.INTERNET,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,

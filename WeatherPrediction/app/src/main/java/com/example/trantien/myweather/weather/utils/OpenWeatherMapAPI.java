@@ -1,7 +1,7 @@
-package com.example.trantien.myweather.utils;
+package com.example.trantien.myweather.weather.utils;
 
 import com.example.trantien.myweather.Common;
-import com.example.trantien.myweather.model.OpenWeatherJSon;
+import com.example.trantien.myweather.weather.model.OpenWeatherJSon;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class OpenWeatherMapAPI {
         try {
             String location = URLEncoder.encode(place, "UTF-8");
 
-            URL url = new URL("http://api.openweathermap.org/data/2.5/weather?place="
+            URL url = new URL("http://api.openweathermap.org/data/2.5/weather?q="
                     + location
                     + "&appid="
                     + Common.KEY_WEATHER);
@@ -40,10 +40,10 @@ public class OpenWeatherMapAPI {
 
         } catch (MalformedURLException e) {
             // TODO Auto-generated catch block
-            //e.printStackTrace();
+            e.printStackTrace();
         } catch (IOException e) {
             // TODO Auto-generated catch block
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         return null;
     }
@@ -120,27 +120,27 @@ public class OpenWeatherMapAPI {
      * @param cnt
      * @return
      */
-//    public static OpenWeatherJSon predictionDaily(String place,int cnt)
-//    {
-//        try {
-//            String location= URLEncoder.encode(place, "UTF-8");
-//            URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?q="+location+"&cnt="+cnt);
-//            InputStreamReader reader = new InputStreamReader(url.openStream(),"UTF-8");
-//            OpenWeatherJSon results = new Gson().fromJson(reader, OpenWeatherJSon.class);
-//
-//            String idIcon = results.getWeather().get(0).getIcon().toString();
-//            String urlIcon = "http://openweathermap.org/img/w/"+idIcon+".png";
-//            URL urlImage = new URL(urlIcon);
-//
-//            return results;
-//
-//        } catch (MalformedURLException e) {
-//            // TODO Auto-generated catch block
-//            //e.printStackTrace();
-//        } catch (IOException e) {
-//            // TODO Auto-generated catch block
-//            //e.printStackTrace();
-//        }
-//        return null;
-//    }
+    public static OpenWeatherJSon predictionDaily(String place,int cnt)
+    {
+        try {
+            String location= URLEncoder.encode(place, "UTF-8");
+            URL url = new URL("http://api.openweathermap.org/data/2.5/forecast/daily?q="+location+"&cnt="+cnt);
+            InputStreamReader reader = new InputStreamReader(url.openStream(),"UTF-8");
+            OpenWeatherJSon results = new Gson().fromJson(reader, OpenWeatherJSon.class);
+
+            String idIcon = results.getWeather().get(0).getIcon().toString();
+            String urlIcon = "http://openweathermap.org/img/w/"+idIcon+".png";
+            URL urlImage = new URL(urlIcon);
+
+            return results;
+
+        } catch (MalformedURLException e) {
+            // TODO Auto-generated catch block
+            //e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            //e.printStackTrace();
+        }
+        return null;
+    }
 }

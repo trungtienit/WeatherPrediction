@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
      android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".WeatherMapsActivity">
+    tools:context=".weather.WeatherMapsActivity">
 
     <fragment
         android:layout_height="match_parent"
         android:id="@+id/map"
-        tools:context=".WeatherMapsActivity"
+        tools:context=".weather.WeatherMapsActivity"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"/>
 

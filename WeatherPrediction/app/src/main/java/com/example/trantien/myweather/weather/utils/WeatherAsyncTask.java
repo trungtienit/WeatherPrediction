@@ -1,4 +1,4 @@
-package com.example.trantien.myweather.utils;
+package com.example.trantien.myweather.weather.utils;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -10,10 +10,9 @@ import android.os.AsyncTask;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.trantien.myweather.MyInfoWindowAdapter;
 import com.example.trantien.myweather.R;
-import com.example.trantien.myweather.TypePrediction;
-import com.example.trantien.myweather.model.OpenWeatherJSon;
+import com.example.trantien.myweather.weather.MyInfoWindowAdapter;
+import com.example.trantien.myweather.weather.model.OpenWeatherJSon;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Marker;
 
@@ -32,6 +31,10 @@ import java.util.Locale;
  */
 
 public class WeatherAsyncTask extends AsyncTask<Void, Void, OpenWeatherJSon> {
+    public enum TypePrediction {
+        ADDRESS_NAME,//nhập theo địa chỉ cụ thể
+        LATITUDE_LONGITUDE//nhập theo vĩ độ kinh độ
+    }
     ProgressDialog dialog;
     Activity activity;
     TypePrediction typePrediction;
@@ -157,7 +160,7 @@ public class WeatherAsyncTask extends AsyncTask<Void, Void, OpenWeatherJSon> {
         double temperature = openWeatherJSon.getMain().getTemp() - 273.15;
         String maxtemp = format.format(openWeatherJSon.getMain().getTemp_max() - 273.15) + "°C";
         String mintemp = format.format(openWeatherJSon.getMain().getTemp_min() - 273.15) + "°C";
-        String wind = openWeatherJSon.getWind().getSpeed() + " m/s";
+        String wind = openWeatherJSon.getWind().getSpeed() + "m/s";
         String mesg = openWeatherJSon.getWeather().get(0).getMain();
         //  Translator translate = Translator.getInstance();
         // String cloudiness=mesg+" ("+translate.translate(mesg, Language.ENGLISH, Language.VIETNAMESE)+")";
